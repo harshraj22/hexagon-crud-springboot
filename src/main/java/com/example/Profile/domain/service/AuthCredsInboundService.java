@@ -18,7 +18,8 @@ public class AuthCredsInboundService implements AuthCredsInbound {
 
     @Override
     public Boolean postAuthCreds(AuthCredsDTO authCredsDTO) {
-        return authCredsOutbound.save(authCredsMapper.map(authCredsDTO));
+        authCredsOutbound.save(authCredsMapper.map(authCredsDTO));
+        return true;
     }
 
     @Override

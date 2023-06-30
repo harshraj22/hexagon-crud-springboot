@@ -5,7 +5,9 @@ import com.example.Profile.domain.ports.inbound.UserProfileInbound;
 import com.example.Profile.domain.ports.outbound.UserProfileOutbound;
 import com.example.Profile.helpers.mapper.UserProfileMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserProfileInboundService implements UserProfileInbound {
 
     @Autowired
@@ -16,7 +18,8 @@ public class UserProfileInboundService implements UserProfileInbound {
 
     @Override
     public Boolean postUserProfile(UserProfileDTO userProfileDTO) {
-        return userProfileOutbound.save(userProfileMapper.map(userProfileDTO));
+        userProfileOutbound.save(userProfileMapper.map(userProfileDTO));
+        return true;
     }
 
     @Override

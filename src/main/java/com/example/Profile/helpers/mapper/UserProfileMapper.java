@@ -2,7 +2,9 @@ package com.example.Profile.helpers.mapper;
 
 import com.example.Profile.adaptor.outbound.entity.UserProfileEntity;
 import com.example.Profile.domain.dto.UserProfileDTO;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserProfileMapper {
 
     public UserProfileEntity map(UserProfileDTO userProfileDTO) {
