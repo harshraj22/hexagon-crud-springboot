@@ -1,5 +1,6 @@
 package com.example.Profile.helpers.mapper;
 
+import com.example.Profile.adaptor.outbound.entity.AuthCredsEntity;
 import com.example.Profile.adaptor.outbound.entity.UserProfileEntity;
 import com.example.Profile.domain.dto.UserProfileDTO;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,9 @@ public class UserProfileMapper {
         userProfileEntity.setName(userProfileDTO.getName());
         userProfileEntity.setEmail(userProfileDTO.getEmail());
         userProfileEntity.setAge(userProfileDTO.getAge());
+        AuthCredsEntity authCredsEntity = new AuthCredsEntity();
+        authCredsEntity.setUsername(userProfileDTO.getUsername());
+        userProfileEntity.setAuthCreds(authCredsEntity);
         return userProfileEntity;
     }
 

@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.antlr.v4.runtime.misc.NotNull;
 
 
 @AllArgsConstructor
@@ -20,6 +21,7 @@ public class UserProfileEntity {
 
     @OneToOne
     @JoinColumn(name = "username", referencedColumnName = "username")
+    @NotNull
     private AuthCredsEntity authCreds;
 
     @Column(nullable = false,length = 40)
