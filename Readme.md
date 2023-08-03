@@ -14,3 +14,7 @@ Use the Postman Collection given in `src/main/resources/postman/`
 
 ### Details:
 The Repository implements a basic CRUD application using Spring Boot. It follows the hexagonal architecture, and uses cockroachdb for backend. The database contains two tables, one column of which is related to the other using foreign key.
+
+
+### Performance Test:
+Run basic performance test using gating. Run `./mvnw gatling:test` when the springboot app is up and running. [Reference](https://github.com/gatling/gatling-maven-plugin-demo-java)
