@@ -3,7 +3,7 @@ package com.example.Profile.domain.service;
 import com.example.Profile.domain.dto.AuthCredsDTO;
 import com.example.Profile.domain.ports.inbound.AuthCredsInbound;
 import com.example.Profile.domain.ports.outbound.AuthCredsOutbound;
-import com.example.Profile.helpers.mapper.AuthCredsMapper;
+import com.example.Profile.domain.mappers.AuthCredsMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

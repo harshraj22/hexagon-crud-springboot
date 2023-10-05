@@ -1,4 +1,4 @@
-package com.example.Profile.helpers.mapper;
+package com.example.Profile.domain.mappers;
 
 import com.example.Profile.domain.ports.outbound.entity.AuthCredsEntity;
 import com.example.Profile.domain.dto.AuthCredsDTO;

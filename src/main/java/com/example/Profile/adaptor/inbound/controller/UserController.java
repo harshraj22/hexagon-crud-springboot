@@ -1,6 +1,9 @@
 package com.example.Profile.adaptor.inbound.controller;
 
 
+import com.example.Profile.adaptor.inbound.controller.apiModels.AuthCredsApiModel;
+import com.example.Profile.adaptor.inbound.controller.apiModels.UserProfileApiModel;
+import com.example.Profile.adaptor.inbound.controller.mappers.ApiModelToDTOMapper;
 import com.example.Profile.domain.dto.AuthCredsDTO;
 import com.example.Profile.domain.dto.UserProfileDTO;
 import com.example.Profile.domain.ports.inbound.AuthCredsInbound;
@@ -20,6 +23,9 @@ public class UserController {
     @Autowired
     UserProfileInbound userProfileInbound;
 
+    @Autowired
+    ApiModelToDTOMapper apiModelToDTOMapper;
+
     // GET method for retrieving AuthCredsDTO
     @GetMapping("/authcreds/{username}")
     public ResponseEntity<AuthCredsDTO> getAuthCreds(@PathVariable String username) {
@@ -33,8 +39,10 @@ public class UserController {
 
     // POST method for creating AuthCredsDTO
     @PostMapping("/authcreds")
-    public ResponseEntity<Boolean> createAuthCreds(@RequestBody AuthCredsDTO authCreds) {
-        Boolean created = authCredsInbound.postAuthCreds(authCreds);
+    public ResponseEntity<Boolean> createAuthCreds(@RequestBody AuthCredsApiModel authCredsApiModel) {
+        Boolean created = authCredsInbound.postAuthCreds(
+                apiModelToDTOMapper.toAuthCredsDTO(authCredsApiModel)
+        );
         if (created) {
             return ResponseEntity.status(HttpStatus.CREATED).body(true);
         } else {
@@ -54,8 +62,10 @@ public class UserController {
 
     // POST method for creating UserProfileDTO
     @PostMapping("/userprofile")
-    public ResponseEntity<Boolean> createUserProfile(@RequestBody UserProfileDTO userProfile) {
-        Boolean created = userProfileInbound.postUserProfile(userProfile);
+    public ResponseEntity<Boolean> createUserProfile(@RequestBody UserProfileApiModel userProfile) {
+        Boolean created = userProfileInbound.postUserProfile(
+                apiModelToDTOMapper.toUserProfileDTO(userProfile)
+        );
         if (created) {
             return ResponseEntity.status(HttpStatus.CREATED).body(true);
         } else {

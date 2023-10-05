@@ -3,7 +3,8 @@ package com.example.Profile.domain.service;
 import com.example.Profile.domain.dto.UserProfileDTO;
 import com.example.Profile.domain.ports.inbound.UserProfileInbound;
 import com.example.Profile.domain.ports.outbound.UserProfileOutbound;
-import com.example.Profile.helpers.mapper.UserProfileMapper;
+import com.example.Profile.domain.mappers.UserProfileMapper;
+import com.example.Profile.domain.ports.outbound.entity.AuthCredsEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +25,7 @@ public class UserProfileInboundService implements UserProfileInbound {
 
     @Override
     public UserProfileDTO getUserProfile(String username) {
-        return userProfileMapper.map(userProfileOutbound.findUserProfileEntityByUsername(username));
+        AuthCredsEntity authCredsEntity = AuthCredsEntity.builder().username(username).build();
+        return userProfileMapper.map(userProfileOutbound.findByAuthCreds(authCredsEntity));
     }
 }

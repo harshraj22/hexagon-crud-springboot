@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 import org.antlr.v4.runtime.misc.NotNull;
 
 
@@ -13,6 +14,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 @Getter
 @Setter
 @Entity
+@SuperBuilder(toBuilder = true)
 @Table(name = "user_profile")
 public class UserProfileEntity {
     @Id

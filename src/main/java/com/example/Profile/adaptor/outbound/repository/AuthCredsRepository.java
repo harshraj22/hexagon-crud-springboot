@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AuthCredsRepository extends JpaRepository<AuthCredsEntity, String>, AuthCredsOutbound {
     AuthCredsEntity findAuthCredsEntityByUsername(String username);
+
+    AuthCredsEntity save(AuthCredsEntity authCredsEntity);
 }
