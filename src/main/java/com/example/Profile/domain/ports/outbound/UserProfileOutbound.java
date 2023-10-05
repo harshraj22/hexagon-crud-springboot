@@ -1,6 +1,6 @@
 package com.example.Profile.domain.ports.outbound;
 
-import com.example.Profile.adaptor.outbound.entity.UserProfileEntity;
+import com.example.Profile.domain.ports.outbound.entity.UserProfileEntity;
 
 public interface UserProfileOutbound {
     UserProfileEntity save(UserProfileEntity userProfileEntity);

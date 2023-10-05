@@ -1,4 +1,4 @@
-package com.example.Profile.adaptor.outbound.entity;
+package com.example.Profile.domain.ports.outbound.entity;
 
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;

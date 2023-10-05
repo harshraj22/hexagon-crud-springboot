@@ -1,6 +1,6 @@
 package com.example.Profile.helpers.mapper;
 
-import com.example.Profile.adaptor.outbound.entity.AuthCredsEntity;
+import com.example.Profile.domain.ports.outbound.entity.AuthCredsEntity;
 import com.example.Profile.domain.dto.AuthCredsDTO;
 import org.springframework.stereotype.Component;
 
