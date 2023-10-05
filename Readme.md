@@ -6,7 +6,7 @@
    -e "POSTGRES_USER=admin" -e "POSTGRES_DB=defaultdb" \
    cockroachdb/cockroach:v21.1.11 start-single-node \
    --insecure`
-3. Start the application: Use Intellij
+3. Start the application: `./mvnw spring-boot:run`
 
 
 ### Trying out APIs
