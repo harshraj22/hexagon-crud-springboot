@@ -13,6 +13,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/v1")
 @CrossOrigin(origins = "*")
@@ -47,7 +49,19 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.CREATED).body(true);
         } else {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(false);
-        }    }
+        }
+    }
+
+    @GetMapping("/authcreds/all")
+    public ResponseEntity<List<AuthCredsDTO>> getAllAuthCreds() {
+        List<AuthCredsDTO> authCredsList = authCredsInbound.getAllAuthCreds();
+        if (!authCredsList.isEmpty()) {
+            return ResponseEntity.ok(authCredsList);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 
     // GET method for retrieving UserProfileDTO
     @GetMapping("/userprofile/{username}")
