@@ -1,114 +1,132 @@
 {
-  "info": {
-    "_postman_id": "4afce38a-4136-4b19-bf97-66b67a0e9500",
-    "name": "Profile API",
-    "description": "API endpoints for managing user profiles and authentication credentials.",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "Get AuthCreds",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:8081/v1/authcreds/{username}",
-          "host": [
-            "localhost"
-          ],
-          "port": "8081",
-          "path": [
-            "v1",
-            "authcreds",
-            "{username}"
-          ]
-        },
-        "description": "Retrieve authentication credentials for a specific username.",
-        "response": []
-      },
-      "response": []
-    },
-    {
-      "name": "Create AuthCreds",
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"username\": \"\",\n  \"password\": \"\"\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "http://localhost:8081/v1/authcreds",
-          "host": [
-            "localhost"
-          ],
-          "port": "8081",
-          "path": [
-            "v1",
-            "authcreds"
-          ]
-        },
-        "description": "Create authentication credentials for a user.",
-        "response": []
-      },
-      "response": []
-    },
-    {
-      "name": "Get UserProfile",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:8081/v1/userprofile/{username}",
-          "host": [
-            "localhost"
-          ],
-          "port": "8081",
-          "path": [
-            "v1",
-            "userprofile",
-            "{username}"
-          ]
-        },
-        "description": "Retrieve user profile for a specific username.",
-        "response": []
-      },
-      "response": []
-    },
-    {
-      "name": "Create UserProfile",
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"username\": \"\",\n  \"name\": \"\",\n  \"email\": \"\",\n  \"age\": 0\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "http://localhost:8081/v1/userprofile",
-          "host": [
-            "localhost"
-          ],
-          "port": "8081",
-          "path": [
-            "v1",
-            "userprofile"
-          ]
-        },
-        "description": "Create a user profile.",
-        "response": []
-      },
-      "response": []
-    }
-  ]
+	"info": {
+		"_postman_id": "91d78197-7868-4354-8c54-b764533e0629",
+		"name": "Profile API",
+		"description": "API endpoints for managing user profiles and authentication credentials.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14399896"
+	},
+	"item": [
+		{
+			"name": "Get AuthCreds",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/v1/authcreds/first",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"authcreds",
+						"first"
+					]
+				},
+				"description": "Retrieve authentication credentials for a specific username."
+			},
+			"response": []
+		},
+		{
+			"name": "Get All AuthCreds",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/v1/authcreds/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"authcreds",
+						"all"
+					]
+				},
+				"description": "Retrieve authentication credentials for a specific username."
+			},
+			"response": []
+		},
+		{
+			"name": "Create AuthCreds",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"first\",\n  \"password\": \"first\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/v1/authcreds",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"authcreds"
+					]
+				},
+				"description": "Create authentication credentials for a user."
+			},
+			"response": []
+		},
+		{
+			"name": "Get UserProfile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/v1/userprofile/first",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"userprofile",
+						"first"
+					]
+				},
+				"description": "Retrieve user profile for a specific username."
+			},
+			"response": []
+		},
+		{
+			"name": "Create UserProfile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"first\",\n  \"name\": \"First Name\",\n  \"email\": \"firstname@gmail.com\",\n  \"age\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/v1/userprofile",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"userprofile"
+					]
+				},
+				"description": "Create a user profile."
+			},
+			"response": []
+		}
+	]
 }
