@@ -35,7 +35,7 @@ public class AuthCredsAPIIntegrationTest extends BaseIntegrationTest{
         authCredsRepository.deleteAll();
     }
 
-    private AuthCredsApiModel getAuthCredsApiModel() {
+    public static AuthCredsApiModel getAuthCredsApiModel() {
         return AuthCredsApiModel.builder()
                 .username("username-test")
                 .password("password-test")
@@ -57,5 +57,6 @@ public class AuthCredsAPIIntegrationTest extends BaseIntegrationTest{
         );
 
         assertThat(authCredsApiModel.getPassword()).isEqualTo(getResponseEntity.getBody().getPassword());
+        assertThat(authCredsApiModel.getUsername()).isEqualTo(getResponseEntity.getBody().getUsername());
     }
 }
