@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: Profile
+  liquibase:
+    contexts: postgres
+    enabled: true
+    change-log: classpath:db/changelog/changelog-master.yaml
+    user: ${CRDB_USER_NAME}
+#  docker:
+#    compose:
+#      lifecycle-management: start_only
+#      enabled: true

@@ -1,0 +1,16 @@
+version: '3.8'
+
+volumes:
+  cockroach-db-vol:
+    name: cockroach-db-vol
+
+services:
+  cockroachdb:
+    container_name: cockroach-container
+    image: cockroachdb/cockroach:latest
+    command: start-single-node --insecure
+    ports:
+      - "26257:26257"
+      - "8080:8082"
+    tty: true
+    stdin_open: true

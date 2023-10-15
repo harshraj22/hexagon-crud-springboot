@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: harshraj22
+      changes:
+        - sqlFile:
+            path: /db/changeset/crateAuthCreds.sql
+        - sqlFile:
+            path: /db/changeset/createUserProfile.sql
