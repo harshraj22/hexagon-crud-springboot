@@ -1,6 +1,5 @@
 package integration;
 
-import com.example.Profile.ProfileApplication;
 import com.example.Profile.adaptor.inbound.controller.apiModels.AuthCredsApiModel;
 import com.example.Profile.adaptor.outbound.repository.AuthCredsRepository;
 import com.example.Profile.domain.dto.AuthCredsDTO;
@@ -8,7 +7,6 @@ import lombok.SneakyThrows;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +14,6 @@ import org.springframework.web.client.RestTemplate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(classes = {ProfileApplication.class, RestTemplate.class})
 public class AuthCredsAPIIntegrationTest extends BaseIntegrationTest{
 
     @Autowired
@@ -30,7 +27,7 @@ public class AuthCredsAPIIntegrationTest extends BaseIntegrationTest{
     }
 
     private String authCredsApiUrl() {
-        return getBaseUrl() + "/authcreds";
+        return getBaseUrl() + "/v1/authcreds";
     }
 
     @AfterEach
