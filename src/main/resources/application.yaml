@@ -5,7 +5,7 @@ spring:
     contexts: postgres
     enabled: true
     change-log: classpath:db/changelog/changelog-master.yaml
-    user: ${CRDB_USER_NAME}
+    user: ${CRDB_USER_NAME:root}
   docker:
     compose:
       lifecycle-management: start_only
