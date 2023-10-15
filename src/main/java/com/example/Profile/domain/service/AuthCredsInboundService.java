@@ -28,7 +28,7 @@ public class AuthCredsInboundService implements AuthCredsInbound {
 
     @Override
     public AuthCredsDTO getAuthCreds(String username) {
-        return authCredsMapper.map(authCredsOutbound.findAuthCredsEntityByUsername(username));
+        return authCredsMapper.map(authCredsOutbound.findByUsername(username));
     }
 
     @Override

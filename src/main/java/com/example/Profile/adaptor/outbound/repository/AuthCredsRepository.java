@@ -9,9 +9,11 @@ import java.util.List;
 
 @Repository
 public interface AuthCredsRepository extends JpaRepository<AuthCredsEntity, String>, AuthCredsOutbound {
-    AuthCredsEntity findAuthCredsEntityByUsername(String username);
+    AuthCredsEntity findByUsername(String username);
 
     AuthCredsEntity save(AuthCredsEntity authCredsEntity);
 
     List<AuthCredsEntity> findAll();
+
+    void deleteAll();
 }

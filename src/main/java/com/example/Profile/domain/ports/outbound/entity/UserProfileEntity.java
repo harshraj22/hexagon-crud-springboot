@@ -22,8 +22,9 @@ public class UserProfileEntity {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "username", referencedColumnName = "username")
+    @JoinColumn(name = "username", referencedColumnName = "username", unique = true)
     @NotNull
+
     private AuthCredsEntity authCreds;
 
     @Column(nullable = false,length = 40)
