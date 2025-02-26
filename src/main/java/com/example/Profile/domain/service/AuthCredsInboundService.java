@@ -20,6 +20,15 @@ public class AuthCredsInboundService implements AuthCredsInbound {
     @Autowired
     AuthCredsMapper authCredsMapper;
 
+    // Write a scheduled task that gets all AuthCredsDTO from the database every 30 seconds
+    // and prints them to the console
+//    @Scheduled(fixedRate = 30000)
+//    public void printAllAuthCreds() {
+//        List<AuthCredsDTO> authCredsDTOList = getAllAuthCreds();
+//        System.out.println("Printing all AuthCredsDTO from the database as scheduled activity:");
+//        authCredsDTOList.forEach(System.out::println);
+//    }
+
     @Override
     public Boolean postAuthCreds(AuthCredsDTO authCredsDTO) {
         authCredsOutbound.save(authCredsMapper.map(authCredsDTO));

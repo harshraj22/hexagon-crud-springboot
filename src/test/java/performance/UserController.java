@@ -36,7 +36,7 @@ public class UserController extends Simulation { // 3
 
     {
         setUp(
-                createAuthCredsSimulation.injectOpen(rampUsers(10).during(10))
+                createAuthCredsSimulation.injectOpen(rampUsers(1000).during(10))
         ).protocols(httpProtocol);
     }
 }
