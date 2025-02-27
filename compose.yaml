@@ -1,8 +1,9 @@
-version: '3.8'
 
 volumes:
   cockroach-db-vol:
     name: cockroach-db-vol
+  prometheus-data:
+    name: prometheus-data
 
 services:
   cockroachdb:
@@ -14,4 +15,17 @@ services:
 #      - "8088:8082"
     tty: true
     stdin_open: true
+    restart: always
+
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./src/main/resources/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus-data:/prometheus-data
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus-data'
     restart: always
