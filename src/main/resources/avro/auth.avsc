@@ -1,0 +1,20 @@
+{
+  "namespace": "com.example.Profile.infrastructure.kafka.avro",
+  "type": "record",
+  "name": "AuthRecord",
+  "fields": [
+    {
+      "name": "username",
+      "type": "string"
+    },
+    {
+      "name": "password",
+      "type": "string"
+    },
+    {
+      "name": "email",
+      "type": ["null", "string"],
+      "default": null
+    }
+  ]
+}
